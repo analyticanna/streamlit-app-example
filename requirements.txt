@@ -2,3 +2,4 @@ langchain
 pypdf
 sentence_transformers
 langchain[docarray]
+docarray
