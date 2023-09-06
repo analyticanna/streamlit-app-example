@@ -15,6 +15,7 @@ from langchain.docstore.document import Document
 from langchain.prompts import PromptTemplate
 from langchain.indexes.vectorstore import VectorstoreIndexCreator
 from langchain.vectorstores import FAISS
+from langchain import HuggingFaceHub
 
 st.set_page_config(page_title="LangChain: Chat with Documents", page_icon="🦜")
 st.title("🦜 LangChain: Chat with Documents")
