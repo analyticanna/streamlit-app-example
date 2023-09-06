@@ -1,2 +1,3 @@
 langchain
 pypdf
+sentence_transformers
