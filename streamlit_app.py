@@ -38,7 +38,7 @@ def configure_retriever(uploaded_files):
 
     # Create embeddings and store in vectordb
     model_name = "BAAI/bge-small-en"
-    model_kwargs = {'device': 'cuda'}
+    model_kwargs = {'device': 'cpu'}
     encode_kwargs = {'normalize_embeddings': True} # set True to compute cosine similarity
     embeddings = HuggingFaceBgeEmbeddings(
       model_name=model_name,
