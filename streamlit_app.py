@@ -2,7 +2,6 @@ import os
 import tempfile
 import streamlit as st
 from langchain.document_loaders import PyPDFLoader
-from langchain.memory import ConversationBufferMemory
 from langchain.memory.chat_message_histories import StreamlitChatMessageHistory
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain.callbacks.base import BaseCallbackHandler
@@ -16,6 +15,7 @@ from langchain.prompts import PromptTemplate
 from langchain.indexes.vectorstore import VectorstoreIndexCreator
 from langchain.vectorstores import FAISS
 from langchain import HuggingFaceHub
+from langchain.memory import ConversationBufferMemory
 
 st.set_page_config(page_title="LangChain: Chat with Documents", page_icon="🦜")
 st.title("🦜 LangChain: Chat with Documents")
