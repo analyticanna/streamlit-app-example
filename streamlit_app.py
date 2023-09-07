@@ -13,7 +13,6 @@ from langchain.text_splitter import CharacterTextSplitter
 from langchain.docstore.document import Document
 from langchain.prompts import PromptTemplate
 from langchain.indexes.vectorstore import VectorstoreIndexCreator
-from langchain.vectorstores import FAISS
 from langchain import HuggingFaceHub
 from langchain.memory import ConversationBufferMemory
 
@@ -104,7 +103,7 @@ memory = ConversationBufferMemory(memory_key="chat_history", chat_memory=msgs, r
 llm=HuggingFaceHub(repo_id="tiiuae/falcon-7b-instruct", model_kwargs={"temperature":0.01 ,
                                                                       "max_length":2000,
                                                                       "max_new_tokens":200})
-qa_chain = ConversationalRetrievalChain.from_llm(llm, vectorStore.as_retriever(), memory=memory, return_source_documents=True)
+qa_chain = ConversationalRetrievalChain.from_llm(llm, retriever=retriever, memory=memory, return_source_documents=True)
 
 if len(msgs.messages) == 0 or st.sidebar.button("Clear message history"):
     msgs.clear()
